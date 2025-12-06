@@ -34,8 +34,10 @@ jobs:
         run: bun run build
 
       - id: publish
-        name: Publish to NPM
-        run: bunx --bun npm publish --access public --no-git-checks
+        name: Configure npm and publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          bunx --bun npm publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
