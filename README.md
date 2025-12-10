@@ -13,6 +13,12 @@
 
 An opinionated ESLint configuration preset for TypeScript projects, based on [`antfu/eslint-config`][1].
 
+Additional rules included are:
+
+- Markdown files support via `eslint-plugin-markdown`
+- Vue files support via `eslint-plugin-vue`
+- Tailwind CSS support via `eslint-plugin-better-tailwindcss`
+
 ## Installation
 
 To install the config, run:
@@ -30,6 +36,8 @@ import antfu from '@antfu/eslint-config'
 export default antfu(
   {
     formatters: true,
+
+    // Specifically for Vue projects
     vue: true,
   },
 
@@ -37,6 +45,8 @@ export default antfu(
     rules: {
       ...preset,
       ...markdown,
+
+      // Specifically for Vue projects
       ...vue,
     },
   },
@@ -51,6 +61,39 @@ export default antfu(
       'tsconfig.*',
     ],
   },
+)
+```
+
+### Tailwind CSS Support
+
+Add the following configurations respectively.
+
+```typescript
+import { tailwind } from '@acfatah/eslint-preset/rules'
+import antfu from '@antfu/eslint-config'
+
+export default antfu(
+  // other configs...
+
+  {
+    rules: {
+      // other rules...
+
+      ...tailwind,
+    },
+
+    settings: {
+      // See: https://github.com/schoero/eslint-plugin-better-tailwindcss/blob/main/docs/settings/settings.md
+      'better-tailwindcss': {
+        // Required to work properly. Adjust accordingly.
+        entryPoint: 'src/styles/global.css',
+        // Optional variable names used to store Tailwind class names
+        variables: ['size', 'variant'],
+      },
+    }
+  },
+
+  // other configs...
 )
 ```
 
@@ -123,7 +166,7 @@ Add the following vscode configuration to `.vscode/settings.json`,
 }
 ```
 
-## Tailwind CSS Configuration
+### Tailwind CSS Support
 
 Install the [Tailwind CSS IntelliSense extension][3].
 
