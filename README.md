@@ -28,7 +28,7 @@ Additional rules included are:
 To install the config, run:
 
 ```bash
-bun add --dev @acfatah/eslint-preset
+bun add --dev @antfu/eslint-config @acfatah/eslint-preset
 ```
 
 Add `eslint.config.ts` file with the following content,
@@ -106,6 +106,8 @@ export default antfu(
 Install the [VS Code ESLint extension][2].
 
 Add the following vscode configuration to `.vscode/settings.json`,
+
+File: `src/files/.vscode/settings.json`
 
 ```jsonc
 {
@@ -193,6 +195,8 @@ Add the following custom Tailwind CSS v4 functions and directives lines to the `
 ```
 
 Then, add the following configurations to `.vscode/tailwindcss.json`.
+
+File: `src/files/.vscode/tailwindcss.json`
 
 ```jsonc
 {

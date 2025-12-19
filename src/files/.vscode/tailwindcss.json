@@ -1,0 +1,105 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@apply",
+      "description": "Inline any existing utility classes into custom CSS.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply-directive"
+        }
+      ]
+    },
+    {
+      "name": "@config",
+      "description": "Load legacy JavaScript-based configuration file (compatibility with v3.x).",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#config-directive"
+        }
+      ]
+    },
+    {
+      "name": "@custom-variant",
+      "description": "Add a custom variant in the project.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#custom-variant-directive"
+        }
+      ]
+    },
+    {
+      "name": "@import",
+      "description": "Use the @import directive to inline import CSS files, including Tailwind itself.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#import-directive"
+        }
+      ]
+    },
+    {
+      "name": "@plugin",
+      "description": "Load legacy JavaScript-based plugin (compatibility with v3.x).",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/upgrading-to-v4#plugins"
+        }
+      ]
+    },
+    {
+      "name": "@reference",
+      "description": "Import main stylesheet for reference without including styles, for use with frameworks like React, Svelte, etc.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#reference-directive"
+        }
+      ]
+    },
+    {
+      "name": "@source",
+      "description": "Specify source files not picked up by automatic content detection.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#source-directive"
+        }
+      ]
+    },
+    {
+      "name": "@theme",
+      "description": "Define custom design tokens like fonts, colors, breakpoints.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#theme-directive"
+        }
+      ]
+    },
+    {
+      "name": "@utility",
+      "description": "Add custom utilities that work with variants like hover, focus, lg.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#utility-directive"
+        }
+      ]
+    },
+    {
+      "name": "@variant",
+      "description": "Apply a Tailwind variant to styles in CSS.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#variant-directive"
+        }
+      ]
+    }
+  ]
+}
