@@ -5,6 +5,10 @@
     <img
       alt="Code Style"
       src="https://antfu.me/badge-code-style.svg"></a>
+  <a href="https://www.npmjs.com/package/@acfatah/eslint-preset">
+    <img
+      alt="NPM Version"
+      src="https://img.shields.io/npm/v/%40acfatah%2Feslint-preset"></a>
   <a href="https://github.com/antfu/eslint-config">
     <img
       alt="GitHub last commit (by committer)"
