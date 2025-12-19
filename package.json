@@ -37,7 +37,7 @@
     "format": "bunx --bun eslint --fix",
     "typecheck": "tsc --noEmit",
     "release": "bunx --bun bumpp --execute=\"bun install\"",
-    "publish": "bun run build && npm publish --access public"
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.7.1",
