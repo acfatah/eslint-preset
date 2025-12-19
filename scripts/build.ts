@@ -15,7 +15,14 @@ const defaultBuildConfig: BuildConfig = {
 Promise.all([
   Bun.build({
     ...defaultBuildConfig,
-    plugins: [dts()],
+    plugins: [
+      dts({
+        libraries: {
+          importedLibraries: ['bun-types'],
+          allowedTypesLibraries: ['node'],
+        },
+      }),
+    ],
     format: 'esm',
     target: 'node',
     naming: '[dir]/[name].mjs',
