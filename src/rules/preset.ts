@@ -17,6 +17,9 @@ export const preset = {
   // https://eslint.style/rules/padding-line-between-statements
   'style/padding-line-between-statements': ['error',
     // require blank line before all return statements
-    { blankLine: 'always', prev: '*', next: 'return' }
-  ],
+    {
+      blankLine: 'always',
+      prev: '*',
+      next: 'return',
+    }],
 }
