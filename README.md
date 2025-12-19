@@ -15,7 +15,9 @@
       src="https://img.shields.io/github/last-commit/acfatah/eslint-preset?display_timestamp=committer&style=flat-square"></a>
 </p>
 
-An opinionated ESLint configuration preset for TypeScript projects, based on [`antfu/eslint-config`][1].
+An opinionated ESLint configuration preset for TypeScript projects, based on
+[`antfu/eslint-config`][1]. I use this preset across my personal and professional
+projects to maintain a consistent code style and quality.
 
 Additional rules included are:
 
@@ -28,21 +30,35 @@ Additional rules included are:
 To install the config, run:
 
 ```bash
-bun add --dev @antfu/eslint-config @acfatah/eslint-preset
+bun add --dev @acfatah/eslint-preset
 ```
 
-Add `eslint.config.ts` file with the following content,
+Add `eslint.config.ts` file with the following content. `config` is just a wrapper
+to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction]
+section for more details.
 
 ```typescript
+import { config } from '@acfatah/eslint-preset'
 import { markdown, preset, vue } from '@acfatah/eslint-preset/rules'
-import antfu from '@antfu/eslint-config'
 
-export default antfu(
+export default config(
   {
     formatters: true,
 
+    // Type of the project. 'lib' for libraries, the default is 'app'
+    type: 'lib',
+
     // Specifically for Vue projects
     vue: true,
+
+    // Files and directories to ignore. Adjust accordingly.
+    ignores: [
+      '**/coverage/**',
+      '**/dist/**',
+      '**/logs/**',
+      'bun.lock',
+      'tsconfig.*',
+    ],
   },
 
   {
@@ -53,17 +69,6 @@ export default antfu(
       // Specifically for Vue projects
       ...vue,
     },
-  },
-
-  {
-    name: 'app/files-to-ignore',
-    ignores: [
-      '**/coverage/**',
-      '**/dist/**',
-      '**/logs/**',
-      'bun.lock',
-      'tsconfig.*',
-    ],
   },
 )
 ```
@@ -194,116 +199,10 @@ Add the following custom Tailwind CSS v4 functions and directives lines to the `
 }
 ```
 
-Then, add the following configurations to `.vscode/tailwindcss.json`.
+Then, copy `src/files/.vscode/tailwind.json` file to `.vscode/tailwind.json`.
 
-File: `src/files/.vscode/tailwindcss.json`
-
-```jsonc
-{
-  "version": 1.1,
-  "atDirectives": [
-    {
-      "name": "@apply",
-      "description": "Inline any existing utility classes into custom CSS.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#apply-directive"
-        }
-      ]
-    },
-    {
-      "name": "@config",
-      "description": "Load legacy JavaScript-based configuration file (compatibility with v3.x).",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#config-directive"
-        }
-      ]
-    },
-    {
-      "name": "@custom-variant",
-      "description": "Add a custom variant in the project.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#custom-variant-directive"
-        }
-      ]
-    },
-    {
-      "name": "@import",
-      "description": "Use the @import directive to inline import CSS files, including Tailwind itself.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#import-directive"
-        }
-      ]
-    },
-    {
-      "name": "@plugin",
-      "description": "Load legacy JavaScript-based plugin (compatibility with v3.x).",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/upgrading-to-v4#plugins"
-        }
-      ]
-    },
-    {
-      "name": "@reference",
-      "description": "Import main stylesheet for reference without including styles, for use with frameworks like React, Svelte, etc.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#reference-directive"
-        }
-      ]
-    },
-    {
-      "name": "@source",
-      "description": "Specify source files not picked up by automatic content detection.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#source-directive"
-        }
-      ]
-    },
-    {
-      "name": "@theme",
-      "description": "Define custom design tokens like fonts, colors, breakpoints.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#theme-directive"
-        }
-      ]
-    },
-    {
-      "name": "@utility",
-      "description": "Add custom utilities that work with variants like hover, focus, lg.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#utility-directive"
-        }
-      ]
-    },
-    {
-      "name": "@variant",
-      "description": "Apply a Tailwind variant to styles in CSS.",
-      "references": [
-        {
-          "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#variant-directive"
-        }
-      ]
-    }
-  ]
-}
+```bash
+curl -s https://raw.githubusercontent.com/acfatah/eslint-preset/refs/heads/main/src/files/.vscode/tailwind.json -o .vscode/tailwind.json
 ```
 
 ## Acknowledgments
@@ -313,3 +212,4 @@ File: `src/files/.vscode/tailwindcss.json`
 [1]: https://github.com/antfu/eslint-config
 [2]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [3]: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+[antfu-factory-fuction]: https://github.com/antfu/eslint-config?tab=readme-ov-file#customization
