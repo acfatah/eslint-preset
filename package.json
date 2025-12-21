@@ -1,7 +1,7 @@
 {
   "name": "@acfatah/eslint-preset",
   "type": "module",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Eslint config preset.",
   "author": "Achmad F. Ibrahim <acfatah@gmail.com>",
   "license": "MIT",
@@ -30,13 +30,13 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
-    "build": "bun run scripts/build.ts",
+    "build": "bun install && bun run scripts/build.ts",
     "lint": "bunx --bun eslint",
     "lint:staged": "bunx --bun eslint --pass-on-no-patterns --no-warn-ignored $(git diff --relative --cached --name-only --diff-filter=d)",
     "lint:commit-message": "bunx --bun commitlint --edit",
     "format": "bunx --bun eslint --fix",
     "typecheck": "tsc --noEmit",
-    "release": "bunx --bun bumpp --execute=\"bun install\""
+    "release": "bun run build && bunx --bun bumpp"
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.7.1",
