@@ -64,7 +64,6 @@ export default config(
   {
     rules: {
       ...preset,
-      ...markdown,
 
       // Specifically for Vue projects
       ...vue,

@@ -1,10 +1,11 @@
+import type { Rules } from '@antfu/eslint-config'
+
 /**
  * Eslint preset for Markdown files.
  *
  * This preset integrates the `@eslint/markdown` plugin.
  * See: https://github.com/eslint/markdown
  */
-
-import eslintMarkdown from '@eslint/markdown'
-
-export const markdown = eslintMarkdown.configs.recommended
+export const markdown = {
+  // Currently no specific overrides for markdown files.
+} satisfies Rules
