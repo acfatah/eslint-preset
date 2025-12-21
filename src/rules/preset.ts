@@ -1,3 +1,5 @@
+import type { Rules } from '@antfu/eslint-config'
+
 export const preset = {
   // https://perfectionist.dev/rules/sort-imports.html
   'sort-imports': 'off',
@@ -29,4 +31,4 @@ export const preset = {
       prev: '*',
       next: 'return',
     }],
-}
+} satisfies Rules

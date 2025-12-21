@@ -1,12 +1,12 @@
+import type { Rules } from '@antfu/eslint-config'
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss'
+
 /**
  * Eslint preset for Tailwind CSS.
  *
  * This preset integrates the `eslint-plugin-better-tailwindcss` plugin.
  * See: https://github.com/schoero/eslint-plugin-better-tailwindcss
  */
-
-import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss'
-
 export const tailwind = {
   ...eslintPluginBetterTailwindcss.configs['recommended-warn']?.rules,
   ...eslintPluginBetterTailwindcss.configs['recommended-error']?.rules,
@@ -15,4 +15,4 @@ export const tailwind = {
   }],
   'better-tailwindcss/no-restricted-classes': 'off',
   'better-tailwindcss/no-unregistered-classes': 'off',
-}
+} satisfies Rules

@@ -1,3 +1,5 @@
+import type { Rules } from '@antfu/eslint-config'
+
 /**
  * Eslint preset for Vue.js files.
  *
@@ -8,4 +10,4 @@ export const vue = {
   'vue/object-property-newline': ['error', {
     allowAllPropertiesOnSameLine: true,
   }],
-}
+} satisfies Rules
