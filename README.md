@@ -9,7 +9,7 @@
     <img
       alt="NPM Version"
       src="https://img.shields.io/npm/v/%40acfatah%2Feslint-preset"></a>
-  <a href="https://github.com/antfu/eslint-config">
+  <a href="https://github.com/acfatah/eslint-preset/commits/main">
     <img
       alt="GitHub last commit (by committer)"
       src="https://img.shields.io/github/last-commit/acfatah/eslint-preset?display_timestamp=committer&style=flat-square"></a>
@@ -44,8 +44,7 @@ to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction
 section for more details.
 
 ```typescript
-import { config } from '@acfatah/eslint-preset'
-import { markdown, preset, vue } from '@acfatah/eslint-preset/rules'
+import { config, preset, vue } from '@acfatah/eslint-preset'
 
 export default config(
   {
@@ -62,8 +61,8 @@ export default config(
       '**/coverage/**',
       '**/dist/**',
       '**/logs/**',
+      '**/tsconfig.*',
       'bun.lock',
-      'tsconfig.*',
     ],
   },
 
@@ -88,10 +87,10 @@ export default config(
 Add the following configurations respectively.
 
 ```typescript
-import { betterTailwindcssPlugin, tailwind } from '@acfatah/eslint-preset'
+import { betterTailwindcssPlugin, config, tailwind } from '@acfatah/eslint-preset'
 import antfu from '@antfu/eslint-config'
 
-export default antfu(
+export default config(
   {
     // other configs...
   },
