@@ -30,7 +30,7 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
-    "build": "bun install && bun run scripts/build.ts",
+    "build": "bun --version > .bun-version && bun install && bun run script/build.ts",
     "lint": "bunx --bun eslint",
     "lint:staged": "bunx --bun eslint --pass-on-no-patterns --no-warn-ignored $(git diff --relative --cached --name-only --diff-filter=d)",
     "lint:commit-message": "bunx --bun commitlint --edit",
