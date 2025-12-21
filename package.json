@@ -43,6 +43,7 @@
     "@antfu/eslint-config": "^6.7.1",
     "@eslint/markdown": "^7.5.1",
     "eslint-plugin-better-tailwindcss": "^3.8.0",
+    "eslint-plugin-format": "^1.1.0",
     "eslint-plugin-vue": "^10.6.2"
   },
   "devDependencies": {
@@ -52,7 +53,6 @@
     "bumpp": "^10.3.2",
     "bun-plugin-dts": "^0.3.0",
     "eslint": "^9.39.2",
-    "eslint-plugin-format": "^1.1.0",
     "simple-git-hooks": "^2.13.1"
   },
   "simple-git-hooks": {
