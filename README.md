@@ -27,11 +27,17 @@ Additional rules included are:
 
 ## Installation
 
-To install the config, run:
+To install ESLint and this preset with Bun, run:
 
 ```bash
-bun add --dev @acfatah/eslint-preset
+bun add --dev eslint @acfatah/eslint-preset
 ```
+
+This preset declares `eslint`, `@antfu/eslint-config`, `@eslint/markdown`,
+`eslint-plugin-better-tailwindcss`, `eslint-plugin-format`, and
+`eslint-plugin-vue` as peer dependencies. Modern package managers, including
+Bun, will install these peers automatically when you add the preset, so you do
+not need to list each plugin manually in your `package.json`.
 
 Add `eslint.config.ts` file with the following content. `config` is just a wrapper
 to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction]
