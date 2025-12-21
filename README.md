@@ -62,6 +62,11 @@ export default config(
   },
 
   {
+    // Optionally when using some plugins
+    plugins: {
+      // ...
+    },
+
     rules: {
       ...preset,
 
@@ -77,13 +82,19 @@ export default config(
 Add the following configurations respectively.
 
 ```typescript
-import { tailwind } from '@acfatah/eslint-preset/rules'
+import { betterTailwindcssPlugin, tailwind } from '@acfatah/eslint-preset'
 import antfu from '@antfu/eslint-config'
 
 export default antfu(
-  // other configs...
+  {
+    // other configs...
+  },
 
   {
+    plugins: {
+      ...betterTailwindcssPlugin,
+    },
+
     rules: {
       // other rules...
 
@@ -101,7 +112,7 @@ export default antfu(
     }
   },
 
-  // other configs...
+  // other flat configs...
 )
 ```
 
