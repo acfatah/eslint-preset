@@ -5,6 +5,8 @@
     <img
       alt="Code Style"
       src="https://antfu.me/badge-code-style.svg"></a>
+  <a href="./LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/acfatah/eslint-preset?style=flat-square"></a>
   <a href="https://www.npmjs.com/package/@acfatah/eslint-preset">
     <img
       alt="NPM Version"
