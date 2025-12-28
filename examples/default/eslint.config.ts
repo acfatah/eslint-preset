@@ -1,5 +1,5 @@
-// import { config, preset } from '@acfatah/eslint-preset'
-import { config, preset } from '../../src'
+// import { config, markdown, preset } from '@acfatah/eslint-preset'
+import { config, markdown, preset } from '../../src'
 
 export default config(
   {
@@ -26,6 +26,7 @@ export default config(
 
     rules: {
       ...preset,
+      ...markdown,
     },
   },
 )

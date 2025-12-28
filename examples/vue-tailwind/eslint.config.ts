@@ -1,5 +1,5 @@
-// import { betterTailwindcssPlugin, config, preset, tailwind, vue } from '@acfatah/eslint-preset'
-import { betterTailwindcssPlugin, config, preset, tailwind, vue } from '../../src'
+// import { betterTailwindcssPlugin, config, markdown, preset, tailwind, vue } from '@acfatah/eslint-preset'
+import { betterTailwindcssPlugin, config, markdown, preset, tailwind, vue } from '../../src'
 
 export default config(
   {
@@ -25,6 +25,7 @@ export default config(
       ...preset,
       ...vue,
       ...tailwind,
+      ...markdown,
     },
 
     settings: {

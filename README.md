@@ -46,7 +46,7 @@ to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction
 section for more details.
 
 ```typescript
-import { config, preset, vue } from '@acfatah/eslint-preset'
+import { config, markdown, preset, vue } from '@acfatah/eslint-preset'
 
 export default config(
   {
@@ -76,6 +76,9 @@ export default config(
 
     rules: {
       ...preset,
+
+      // Optional markdown rules
+      ...markdown,
 
       // Specifically for Vue projects
       ...vue,
