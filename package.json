@@ -34,6 +34,8 @@
     "lint": "bunx --bun eslint",
     "lint:staged": "bunx --bun eslint --pass-on-no-patterns --no-warn-ignored $(git diff --relative --cached --name-only --diff-filter=d)",
     "lint:commit-message": "bunx --bun commitlint --edit",
+    "inspect:default": "cd templates/default && bunx --bun eslint --inspect-config",
+    "inspect:vue-tailwind": "cd templates/vue-tailwind && bunx --bun eslint --inspect-config",
     "format": "bunx --bun eslint --fix",
     "typecheck": "tsc --noEmit",
     "release": "bun run build && bunx --bun bumpp"

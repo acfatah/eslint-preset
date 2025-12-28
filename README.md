@@ -90,7 +90,6 @@ Add the following configurations respectively.
 
 ```typescript
 import { betterTailwindcssPlugin, config, tailwind } from '@acfatah/eslint-preset'
-import antfu from '@antfu/eslint-config'
 
 export default config(
   {
@@ -121,6 +120,24 @@ export default config(
 
   // other flat configs...
 )
+```
+
+## Inspect Example Configs
+
+You can inspect the fully resolved configs shipped in this repo. These commands
+run from the project root and run the [ESLint config inspector][4] against the
+templates used.
+
+### Default TypeScript preset
+
+```bash
+bun inspect:default
+```
+
+### Vue + Tailwind preset
+
+```bash
+bun inspect:vue-tailwind
 ```
 
 ## VS Code Support
@@ -229,4 +246,5 @@ curl -s https://raw.githubusercontent.com/acfatah/eslint-preset/refs/heads/main/
 [1]: https://github.com/antfu/eslint-config
 [2]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [3]: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+[4]: https://github.com/eslint/config-inspector
 [antfu-factory-fuction]: https://github.com/antfu/eslint-config?tab=readme-ov-file#customization
