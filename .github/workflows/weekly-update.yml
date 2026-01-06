@@ -26,8 +26,9 @@ jobs:
         # Need to run both update and install to ensure lockfile is updated correctly
         run: bun update --production && bun install
 
-      - name: Run tests
-        run: bun test
+      # Skip the test step because there are currently no tests in the project
+      # - name: Run tests
+      #   run: bun test
 
       - name: Detect changes
         id: changes
