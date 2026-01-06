@@ -1,7 +1,7 @@
 {
   "name": "@acfatah/eslint-preset",
   "type": "module",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Eslint config preset.",
   "author": "Achmad F. Ibrahim <acfatah@gmail.com>",
   "license": "MIT",
