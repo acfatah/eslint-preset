@@ -35,22 +35,23 @@ To install ESLint and this preset with Bun, run:
 bun add --dev eslint @acfatah/eslint-preset
 ```
 
-This preset declares `eslint`, `@antfu/eslint-config`, `@eslint/markdown`,
+This preset declares `@antfu/eslint-config`, `@eslint/markdown`, `eslint`,
 `eslint-plugin-better-tailwindcss`, `eslint-plugin-format`, and
-`eslint-plugin-vue` as peer dependencies. Modern package managers, including
-Bun, will install these peers automatically when you add the preset, so you do
-not need to list each plugin manually in your `package.json`.
+`eslint-plugin-vue` as dependencies. Bun, will install these packages
+automatically when you add the preset, so you do not need to list each plugin
+manually in your `package.json`.
 
 Add `eslint.config.ts` file with the following content. `config` is just a wrapper
 to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction]
 section for more details.
 
 ```typescript
-import { config, markdown, preset, vue } from '@acfatah/eslint-preset'
+import { defineConfig, markdown, preset, vue } from '@acfatah/eslint-preset'
 
-export default config(
+export default defineConfig(
   {
-    formatters: true,
+    formatters: true, // Optional since v1.4.0. Default to true.
+    typescript: true, // Optional since v1.4.0. Default to true.
 
     // Type of the project. 'lib' for libraries, the default is 'app'
     type: 'lib',
@@ -92,9 +93,9 @@ export default config(
 Add the following configurations respectively.
 
 ```typescript
-import { betterTailwindcssPlugin, config, tailwind } from '@acfatah/eslint-preset'
+import { betterTailwindcssPlugin, defineConfig, tailwind } from '@acfatah/eslint-preset'
 
-export default config(
+export default defineConfig(
   {
     // other configs...
   },

@@ -1,10 +1,8 @@
-// import { config, markdown, preset } from '@acfatah/eslint-preset'
-import { config, markdown, preset } from '../../src'
+// import { defineConfig, markdown, preset } from '@acfatah/eslint-preset'
+import { defineConfig, markdown, preset } from '../../src'
 
-export default config(
+export default defineConfig(
   {
-    formatters: true,
-
     // Type of the project. 'lib' for libraries, the default is 'app'
     type: 'lib',
 

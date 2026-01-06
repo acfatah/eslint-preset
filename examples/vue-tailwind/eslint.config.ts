@@ -1,9 +1,8 @@
-// import { betterTailwindcssPlugin, config, markdown, preset, tailwind, vue } from '@acfatah/eslint-preset'
-import { betterTailwindcssPlugin, config, markdown, preset, tailwind, vue } from '../../src'
+// import { betterTailwindcssPlugin, defineConfig, markdown, preset, tailwind, vue } from '@acfatah/eslint-preset'
+import { betterTailwindcssPlugin, defineConfig, markdown, preset, tailwind, vue } from '../../src'
 
-export default config(
+export default defineConfig(
   {
-    formatters: true,
     vue: true,
 
     // Files and directories to ignore. Adjust accordingly.
