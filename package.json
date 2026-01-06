@@ -46,7 +46,8 @@
     "eslint": "^9.39.2",
     "eslint-plugin-better-tailwindcss": "^3.8.0",
     "eslint-plugin-format": "^1.1.0",
-    "eslint-plugin-vue": "^10.6.2"
+    "eslint-plugin-vue": "^10.6.2",
+    "jiti": "^2.6.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
