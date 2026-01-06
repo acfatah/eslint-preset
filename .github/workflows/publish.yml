@@ -1,4 +1,4 @@
-name: Bun.sh npm Publish
+name: npm Publish
 
 on:
   push:

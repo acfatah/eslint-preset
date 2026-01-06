@@ -1,4 +1,4 @@
-name: Bun.sh Release
+name: Release
 
 on:
   push:
