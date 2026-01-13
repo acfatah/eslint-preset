@@ -22,26 +22,26 @@ jobs:
         with:
           bun-version-file: .bun-version
 
-      - name: Update dependencies
-        # Need to run both update and install to ensure lockfile is updated correctly
-        run: bun update --production && bun install
+      - name: Install dependencies
+        run: bun install
 
       # Skip the test step because there are currently no tests in the project
       # - name: Run tests
       #   run: bun test
 
+      # Check for dependency changes excluding devDependencies
       - name: Detect changes
         id: changes
         run: |
-          if git diff --quiet; then
+          bunx --bun jq .dependencies package.json > logs/current-deps.json
+          bun update
+          bunx --bun jq .dependencies package.json > logs/updated-deps.json
+          if cmp -s logs/current-deps.json logs/updated-deps.json; then
             echo "No changes detected"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "Changes detected:"
-            git diff --stat
-            echo ""
-            echo "Changed files:"
-            git diff --name-only
+            diff --minimal logs/current-deps.json logs/updated-deps.json
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
