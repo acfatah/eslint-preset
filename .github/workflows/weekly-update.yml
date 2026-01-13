@@ -33,6 +33,7 @@ jobs:
       - name: Detect changes
         id: changes
         run: |
+          mkdir -p logs
           bunx --bun jq .dependencies package.json > logs/current-deps.json
           bun update
           bunx --bun jq .dependencies package.json > logs/updated-deps.json
