@@ -14,5 +14,5 @@ export const tailwind = {
     printWidth: 100,
   }],
   'better-tailwindcss/no-restricted-classes': 'off',
-  'better-tailwindcss/no-unregistered-classes': 'off',
+  'better-tailwindcss/no-unknown-classes': 'off',
 } satisfies Rules
