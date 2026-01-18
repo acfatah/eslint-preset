@@ -42,7 +42,7 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "Changes detected:"
-            diff --minimal logs/current-deps.json logs/updated-deps.json
+            diff --minimal logs/current-deps.json logs/updated-deps.json || true
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
