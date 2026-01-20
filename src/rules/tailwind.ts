@@ -1,4 +1,5 @@
 import type { Rules } from '@antfu/eslint-config'
+
 import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss'
 
 /**
