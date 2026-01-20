@@ -4,15 +4,15 @@ export const preset = {
   // https://perfectionist.dev/rules/sort-imports.html
   'sort-imports': 'off',
   'perfectionist/sort-imports': ['error', {
-    partitionByNewLine: true,
-    newlinesBetween: 'ignore',
     ignoreCase: false,
+    newlinesBetween: 1,
+    partitionByComment: true,
   }],
 
   'perfectionist/sort-exports': ['error', {
-    partitionByNewLine: true,
-    newlinesBetween: 'ignore',
     ignoreCase: false,
+    newlinesBetween: 1,
+    partitionByComment: true,
   }],
 
   // https://eslint.style/rules/space-before-function-paren
