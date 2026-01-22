@@ -5,7 +5,7 @@
     "": {
       "name": "@acfatah/eslint-preset",
       "dependencies": {
-        "@antfu/eslint-config": "^7.0.1",
+        "@antfu/eslint-config": "^7.2.0",
         "@eslint/markdown": "^7.5.1",
         "eslint": "^9.39.2",
         "eslint-plugin-better-tailwindcss": "^4.0.1",
