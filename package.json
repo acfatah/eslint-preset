@@ -38,6 +38,7 @@
     "inspect:vue-tailwind": "cd templates/vue-tailwind && bunx --bun eslint --inspect-config",
     "format": "bunx --bun eslint --fix",
     "typecheck": "tsc --noEmit",
+    "update": "bun --version > .bun-version && bun update && bun install",
     "release": "bun run build && bunx --bun bumpp"
   },
   "dependencies": {
