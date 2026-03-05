@@ -1,5 +1,5 @@
-// import { defineConfig, markdown, preset } from '@acfatah/eslint-preset'
-import { defineConfig, markdown, preset } from '../../src'
+// import { defineConfig, markdown, typescript } from '@acfatah/eslint-preset'
+import { defineConfig, markdown, typescript } from '../../src'
 
 export default defineConfig(
   {
@@ -21,10 +21,8 @@ export default defineConfig(
     plugins: {
       // ...
     },
-
-    rules: {
-      ...preset,
-      ...markdown,
-    },
   },
+
+  typescript,
+  markdown,
 )

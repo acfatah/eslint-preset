@@ -41,12 +41,12 @@ This preset declares `@antfu/eslint-config`, `@eslint/markdown`, `eslint`,
 automatically when you add the preset, so you do not need to list each plugin
 manually in your `package.json`.
 
-Add `eslint.config.ts` file with the following content. `config` is just a wrapper
-to the `antfu` factory function. See [antfu Customization][antfu-factory-fuction]
-section for more details.
+Add an `eslint.config.ts` file with the following content. `defineConfig` is a
+wrapper around the `antfu` factory function. See [antfu
+Customization][antfu-factory-fuction] for details.
 
 ```typescript
-import { defineConfig, markdown, preset, vue } from '@acfatah/eslint-preset'
+import { defineConfig, markdown, typescript, vue } from '@acfatah/eslint-preset'
 
 export default defineConfig(
   {
@@ -74,17 +74,11 @@ export default defineConfig(
     plugins: {
       // ...
     },
-
-    rules: {
-      ...preset,
-
-      // Optional markdown rules
-      ...markdown,
-
-      // Specifically for Vue projects
-      ...vue,
-    },
   },
+
+  typescript,
+  markdown,
+  vue,
 )
 ```
 
@@ -105,22 +99,21 @@ export default defineConfig(
       ...betterTailwindcssPlugin,
     },
 
-    rules: {
-      // other rules...
-
-      ...tailwind,
-    },
-
     settings: {
       // See: https://github.com/schoero/eslint-plugin-better-tailwindcss/blob/main/docs/settings/settings.md
       'better-tailwindcss': {
         // Required to work properly. Adjust accordingly.
         entryPoint: 'src/styles/global.css',
         // Optional variable names used to store Tailwind class names
-        variables: ['size', 'variant'],
+        variables: [
+          ['variant', [{ match: 'objectValues' }]],
+          ['size', [{ match: 'objectValues' }]],
+        ],
       },
     }
   },
+
+  tailwind,
 
   // other flat configs...
 )
