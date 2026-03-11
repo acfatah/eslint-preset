@@ -17,5 +17,10 @@ export const vue: Config = {
     'vue/object-property-newline': ['error', {
       allowAllPropertiesOnSameLine: true,
     }],
+
+    'vue/max-attributes-per-line': ['error', {
+      singleline: { max: 2 },
+      multiline: { max: 1 },
+    }],
   },
 }
