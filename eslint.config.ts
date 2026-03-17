@@ -1,23 +1,21 @@
-import { defineConfig, markdown, preset } from './src'
+import { defineConfig, markdown, typescript } from './src'
 
 export default defineConfig(
   {
     type: 'lib',
 
-    // Files and directories to ignore. Adjust accordingly.
     ignores: [
       '**/coverage/**',
       '**/dist/**',
       '**/logs/**',
       '**/tsconfig.*',
       'bun.lock',
+
+      // Ignoring test fixtures.
+      'tests/fixtures/**',
     ],
   },
 
-  {
-    rules: {
-      ...preset,
-      ...markdown,
-    },
-  },
+  typescript,
+  markdown,
 )

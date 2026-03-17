@@ -1,5 +1,5 @@
-// import { betterTailwindcssPlugin, defineConfig, markdown, preset, tailwind, vue } from '@acfatah/eslint-preset'
-import { betterTailwindcssPlugin, defineConfig, markdown, preset, tailwind, vue } from '../../src'
+// import { betterTailwindcssPlugin, defineConfig, markdown, tailwind, typescript, vue } from '@acfatah/eslint-preset'
+import { betterTailwindcssPlugin, defineConfig, markdown, tailwind, typescript, vue } from '../../src'
 
 export default defineConfig(
   {
@@ -20,21 +20,22 @@ export default defineConfig(
       ...betterTailwindcssPlugin,
     },
 
-    rules: {
-      ...preset,
-      ...vue,
-      ...tailwind,
-      ...markdown,
-    },
-
     settings: {
       // See: https://github.com/schoero/eslint-plugin-better-tailwindcss/blob/main/docs/settings/settings.md
       // 'better-tailwindcss': {
       //   // Required to work properly. Adjust accordingly.
       //   entryPoint: 'src/styles/global.css',
       //   // Optional variable names used to store Tailwind class names
-      //   variables: ['size', 'variant'],
+      //   variables: [
+      //     ['variant', [{ match: 'objectValues' }]],
+      //     ['size', [{ match: 'objectValues' }]],
+      //   ],
       // },
     },
   },
+
+  typescript,
+  vue,
+  tailwind,
+  markdown,
 )

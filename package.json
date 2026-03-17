@@ -1,7 +1,7 @@
 {
   "name": "@acfatah/eslint-preset",
   "type": "module",
-  "version": "4.0.5",
+  "version": "5.0.0-beta.1",
   "description": "Eslint config preset.",
   "author": "Achmad F. Ibrahim <acfatah@gmail.com>",
   "license": "MIT",
@@ -42,19 +42,19 @@
     "release": "bun run build && bunx --bun bumpp"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^7.7.0",
+    "@antfu/eslint-config": "^7.7.3",
     "@eslint/markdown": "^7.5.1",
     "eslint": "^10.0.3",
     "eslint-plugin-better-tailwindcss": "^4.3.2",
-    "eslint-plugin-format": "^1.5.0",
+    "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-vue": "^10.8.0",
     "jiti": "^2.6.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.3",
-    "@commitlint/config-conventional": "^20.4.3",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@types/bun": "^1.3.10",
-    "bumpp": "^10.4.1",
+    "bumpp": "^11.0.1",
     "bun-plugin-dts": "^0.4.0",
     "simple-git-hooks": "^2.13.1"
   },
