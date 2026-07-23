@@ -26,6 +26,7 @@ Additional rules included are:
 - Markdown files support via `eslint-plugin-markdown`
 - Vue files support via `eslint-plugin-vue`
 - Tailwind CSS support via `eslint-plugin-better-tailwindcss`
+- Import grouping in `.vue` SFCs, one blank line between groups and none within
 
 ## Installation
 
@@ -81,6 +82,53 @@ export default defineConfig(
   vue,
 )
 ```
+
+### Vue Import Grouping
+
+The `vue` config pins `perfectionist/sort-imports` for `.vue` SFCs: one blank
+line between groups, none within. Without it, `.vue` falls back to the
+`@antfu/eslint-config` default, which enforces import order but leaves blank
+lines alone, so the separators drift.
+
+Five blocks, fully autofixable:
+
+```vue
+<script setup lang="ts">
+import type { Buffer } from 'node:buffer'
+import type { Ref } from 'vue'
+import type { AliasType } from '@/types'
+import type { Parent } from '../types'
+
+import axios from 'axios'
+import { readFile } from 'node:fs/promises'
+import { computed } from 'vue'
+
+import { helper } from '@/utils'
+
+import Child from './Child.vue'
+
+import './styles.css'
+</script>
+```
+
+| Block | Contents                                                             |
+| ----- | -------------------------------------------------------------------- |
+| 1     | Every `import type`, ordered builtin, external, alias, then relative |
+| 2     | Package value imports, npm and builtin merged                        |
+| 3     | Alias value imports, `@/` and `~/`                                   |
+| 4     | Relative value imports, `./` and `../`                               |
+| 5     | Side effect imports                                                  |
+
+The `.vue` layout differs from `.ts` on purpose:
+
+- In `.vue`, every `import type` is hoisted into one leading block and side
+  effect imports collect at the end.
+- In `.ts`, type and value imports interleave per tier, and a side effect
+  import acts as a barrier that fragments the block.
+
+Gotcha: if a side effect import has to run before another import, keep it in a
+`.ts` module. Working examples of both layouts live in
+`examples/vue-tailwind/tests/fixtures/` and `examples/default/tests/fixtures/`.
 
 ### Tailwind CSS Support
 
