@@ -10,7 +10,11 @@ export const typescript: Config = {
   rules: {
     // https://perfectionist.dev/rules/sort-imports.html
     'sort-imports': 'off',
+    // `type` has to be restated. Flat-config rule options replace rather than
+    // merge, so omitting it drops antfu's `natural` for the perfectionist
+    // default `alphabetical`, which sorts `./mod10` ahead of `./mod2`.
     'perfectionist/sort-imports': ['error', {
+      type: 'natural',
       ignoreCase: false,
       newlinesBetween: 1,
       partitionByComment: true,
